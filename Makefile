@@ -4,7 +4,7 @@ clean:
 
 %:|$(build_dir)
 	@gcc -g -o build/$@ $@.c
-	@build/$@
+	-build/$@
 
 $(build_dir):
 	@mkdir $(build_dir)
