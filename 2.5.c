@@ -18,6 +18,5 @@ int strbrk(char *s, char *accept) {
 int main() {
     char s[] = "abcdefgh";
     char accept[] = "fdnt";
-    printf("value %d\n", strbrk(s,accept));
     assert(strbrk(s, accept)== 3);
 }
