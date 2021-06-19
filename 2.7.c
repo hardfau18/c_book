@@ -4,10 +4,7 @@
 #include "lib.h"
 
 /**
- * setbits : returns x with the n bits that begin at position p set to the
- * rightmost n bits of y, leaving the other bits unchanged.
- * all indexing starts at 0
- * assumes p>n
+ * invert : returns x with n bits toggled from position p
  */
 #define invert(x, p, n)  ((~mask(p,n)& x)|(~x & ~(~0<<n))<<(p+1-n))
 
