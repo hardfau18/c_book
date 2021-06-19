@@ -9,10 +9,10 @@
  * all indexing starts at 0
  * assumes p>n
  */
-#define setbits(x, p, n, y)  ((~mask(p,n)& x)|(y & ~(~0<<n))<<(p+1-n))
+#define invert(x, p, n)  ((~mask(p,n)& x)|(~x & ~(~0<<n))<<(p+1-n))
 
 int main() {
-    uint16_t x = 0xc573, p = 11, n = 8, y=0xa2dc, res = 0xcdc3;
-    assert(setbits(x,p,n,y)==res);
+    uint16_t x = 0xc573, p = 11, n = 8, res = 0xc8c3;
+    assert(invert(x,p,n)==res);
     return 0;
 }
