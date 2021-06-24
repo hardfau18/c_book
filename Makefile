@@ -1,9 +1,11 @@
 build_dir := build
+CFLAGS=-g
+LFLAGS=-lm
 clean:
 	@rm -rf build/*
 
 %:|$(build_dir)
-	@gcc -g -o build/$@ $@.c
+	@gcc $(CFLAGS) -o build/$@ $@.c $(LFLAGS)
 	-build/$@
 
 $(build_dir):
